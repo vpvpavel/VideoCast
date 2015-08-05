@@ -15,9 +15,28 @@
 #import "MediaListModel.h"
 
 #import <UIKit/UIKit.h>
+#import "AssetBrowserController.h"
+#import "ChromecastDeviceController.h"
 
-@interface AppDelegate : UIResponder<UIApplicationDelegate>
+#import "MyHTTPConnection.h"
+
+#import "HTTPConnection.h"
+
+@class iPhoneHTTPServerViewController;
+@class HTTPServer;
+
+@interface AppDelegate : UIResponder<UIApplicationDelegate, AssetBrowserControllerDelegate, ChromecastDeviceControllerDelegate>
+{
+   HTTPServer *httpServer;
+    
+    UIWindow *window;
+//    iPhoneHTTPServerViewController *viewController;
+}
+
+@property (nonatomic, assign) NSInteger port;
 
 @property(strong, nonatomic) UIWindow* window;
 @property(nonatomic, strong) MediaListModel *mediaList;
+
+
 @end

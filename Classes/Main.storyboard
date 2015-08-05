@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="nnb-FA-b1S">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="nnb-FA-b1S">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="7VQ-uu-Zfz" kind="relationship" relationship="rootViewController" id="jOF-gy-LeG"/>
+                        <segue destination="hDl-nC-5Ts" kind="relationship" relationship="rootViewController" id="uOi-Sf-pQr"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Og7-9r-Guv" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -64,7 +64,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <segue destination="z7F-cd-Xed" kind="show" identifier="playMedia" id="wmo-Ss-in8"/>
+                                    <segue destination="z7F-cd-Xed" kind="show" identifier="playMedia1" id="wmo-Ss-in8"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -83,7 +83,37 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uvh-sJ-6Jo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="453" y="-1310"/>
+            <point key="canvasLocation" x="1733" y="-1440"/>
+        </scene>
+        <!--Asset Browser Controller-->
+        <scene sceneID="1ei-bc-GPf">
+            <objects>
+                <tableViewController id="hDl-nC-5Ts" customClass="AssetBrowserController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="YQA-JF-w20">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Htn-qj-jSp">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Htn-qj-jSp" id="iPl-FP-8QS">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="hDl-nC-5Ts" id="Qhd-88-r5g"/>
+                            <outlet property="delegate" destination="hDl-nC-5Ts" id="rV8-tg-7xu"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="0he-WC-3fp"/>
+                    <connections>
+                        <segue destination="z7F-cd-Xed" kind="show" identifier="playMedia" id="Lgg-QX-RJC"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DRQ-q3-DIL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="777" y="-1364"/>
         </scene>
         <!--Media Table View Controller-->
         <scene sceneID="wmy-E2-JFj">
@@ -166,7 +196,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QPv-ly-jAJ" customClass="LocalPlayerView">
-                                <rect key="frame" x="0.0" y="20" width="414" height="233"/>
+                                <rect key="frame" x="0.0" y="20" width="414" height="233.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="QPv-ly-jAJ" secondAttribute="height" multiplier="16:9" id="XfY-wz-hsD"/>
@@ -228,6 +258,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ooZ-Rc-7xw"/>
+        <segue reference="wmo-Ss-in8"/>
     </inferredMetricsTieBreakers>
 </document>

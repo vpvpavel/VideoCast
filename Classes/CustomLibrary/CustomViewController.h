@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AssetBrowserController.h"
 
-@interface CustomViewController : UIViewController
+@interface CustomViewController : UIViewController <UITextFieldDelegate>
+
 
 @end

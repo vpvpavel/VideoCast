@@ -44,7 +44,7 @@
                                                name:UIDeviceOrientationDidChangeNotification
                                              object:nil];
   _playerView.delegate = self;
-  [self syncCustomTextToMedia];
+  [self syncTextToMedia];
   if (self.playerView.fullscreen) {
     [self hideNavigationBar:YES];
   }
@@ -96,7 +96,7 @@
 - (void)setUrlToPlay:(id)newUrlToPlay {
     if (_urlToPlay != newUrlToPlay) {
         _urlToPlay = newUrlToPlay;
-        [self syncCustomTextToMedia];
+        [self syncTextToMedia];
     }
 }
 - (void)syncCustomTextToMedia {
