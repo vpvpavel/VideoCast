@@ -26,7 +26,8 @@
 //-(void)getOrders;
 //- (void)deleteOrder:(NSNumber*)idOrder;
 
-@property (nonatomic, strong) NSData *            dataFile;
+@property (nonatomic, strong) NSData *              dataFile;
+@property (nonatomic, strong) NSData *              thumbnailImage;
 
 
 @end

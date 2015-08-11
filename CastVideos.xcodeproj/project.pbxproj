@@ -32,6 +32,13 @@
 		491627AF184FBF9C00351397 /* SimpleImageFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 491627AE184FBF9C00351397 /* SimpleImageFetcher.m */; };
 		496D46FE182DBE9100343F72 /* Media.m in Sources */ = {isa = PBXBuildFile; fileRef = 496D46FD182DBE9100343F72 /* Media.m */; };
 		496D4701182DBE9C00343F72 /* MediaListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 496D4700182DBE9C00343F72 /* MediaListModel.m */; };
+		A84345E61B78A91600CEB21C /* ImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A84345E51B78A91600CEB21C /* ImageCell.m */; };
+		A8677C8B1B78E494004C3689 /* HTTPResponseProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = A8677C801B78E494004C3689 /* HTTPResponseProxy.m */; };
+		A8677C8C1B78E494004C3689 /* Route.m in Sources */ = {isa = PBXBuildFile; fileRef = A8677C821B78E494004C3689 /* Route.m */; };
+		A8677C8D1B78E494004C3689 /* RouteRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A8677C841B78E494004C3689 /* RouteRequest.m */; };
+		A8677C8E1B78E494004C3689 /* RouteResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A8677C861B78E494004C3689 /* RouteResponse.m */; };
+		A8677C8F1B78E494004C3689 /* RoutingConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = A8677C881B78E494004C3689 /* RoutingConnection.m */; };
+		A8677C901B78E494004C3689 /* RoutingHTTPServer.m in Sources */ = {isa = PBXBuildFile; fileRef = A8677C8A1B78E494004C3689 /* RoutingHTTPServer.m */; };
 		A8A4A3131B70F3070077777C /* AssetBrowserController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A4A30A1B70F3070077777C /* AssetBrowserController.m */; };
 		A8A4A3141B70F3070077777C /* AssetBrowserItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A4A30C1B70F3070077777C /* AssetBrowserItem.m */; };
 		A8A4A3151B70F3070077777C /* AssetBrowserSource.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A4A30E1B70F3070077777C /* AssetBrowserSource.m */; };
@@ -61,13 +68,14 @@
 		A8A4A4141B71E33D0077777C /* DispatchQueueLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A4A40C1B71E33D0077777C /* DispatchQueueLogFormatter.m */; };
 		A8A4A4151B71E33D0077777C /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = A8A4A40D1B71E33D0077777C /* README.txt */; };
 		A8A4A41F1B71E6800077777C /* Web in Resources */ = {isa = PBXBuildFile; fileRef = A8A4A41E1B71E6800077777C /* Web */; };
-		A8A4A4221B7201470077777C /* MyHTTPConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A4A4211B7201470077777C /* MyHTTPConnection.m */; };
-		A8A4A4251B7201AB0077777C /* HTTPResponseTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A4A4241B7201AB0077777C /* HTTPResponseTest.m */; };
-		A8A4A4281B720C780077777C /* MyHTTPConnectionFile.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A4A4271B720C780077777C /* MyHTTPConnectionFile.m */; };
 		A8A4A4341B720D010077777C /* MultipartFormDataParser.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A4A42F1B720D010077777C /* MultipartFormDataParser.m */; };
 		A8A4A4351B720D010077777C /* MultipartMessageHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A4A4311B720D010077777C /* MultipartMessageHeader.m */; };
 		A8A4A4361B720D010077777C /* MultipartMessageHeaderField.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A4A4331B720D010077777C /* MultipartMessageHeaderField.m */; };
 		A8A4A4391B7247F30077777C /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A4A4381B7247F30077777C /* Model.m */; };
+		A8D220571B7A2CC20094FCB1 /* reveal-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A8D220531B7A2CC20094FCB1 /* reveal-icon.png */; };
+		A8D220581B7A2CC20094FCB1 /* reveal-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A8D220541B7A2CC20094FCB1 /* reveal-icon@2x.png */; };
+		A8D220591B7A2CC20094FCB1 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8D220561B7A2CC20094FCB1 /* SWRevealViewController.m */; };
+		A8D2205B1B7A6AF20094FCB1 /* DropboxSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8D2205A1B7A6AF20094FCB1 /* DropboxSDK.framework */; };
 		CCE5BD43196F037300016BAB /* MediaAccessibility.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCE5BD42196F037300016BAB /* MediaAccessibility.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		CCE5BD45196F038400016BAB /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCE5BD44196F038400016BAB /* CoreText.framework */; };
 		EB0EAE502A661842D7221B79 /* libPods-CastVideos.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FC9B5525AE0F00A7BF2F43E7 /* libPods-CastVideos.a */; };
@@ -132,6 +140,20 @@
 		496D4700182DBE9C00343F72 /* MediaListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaListModel.m; sourceTree = "<group>"; };
 		4A57F69A5118DA34FB4A308C /* Pods-CastVideos.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CastVideos.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CastVideos/Pods-CastVideos.debug.xcconfig"; sourceTree = "<group>"; };
 		52402E57263507436405B954 /* Pods-CastVideos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CastVideos.release.xcconfig"; path = "Pods/Target Support Files/Pods-CastVideos/Pods-CastVideos.release.xcconfig"; sourceTree = "<group>"; };
+		A84345E41B78A91600CEB21C /* ImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImageCell.h; path = Classes/ImageCell.h; sourceTree = SOURCE_ROOT; };
+		A84345E51B78A91600CEB21C /* ImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImageCell.m; path = Classes/ImageCell.m; sourceTree = SOURCE_ROOT; };
+		A8677C7F1B78E494004C3689 /* HTTPResponseProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPResponseProxy.h; sourceTree = "<group>"; };
+		A8677C801B78E494004C3689 /* HTTPResponseProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPResponseProxy.m; sourceTree = "<group>"; };
+		A8677C811B78E494004C3689 /* Route.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Route.h; sourceTree = "<group>"; };
+		A8677C821B78E494004C3689 /* Route.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Route.m; sourceTree = "<group>"; };
+		A8677C831B78E494004C3689 /* RouteRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RouteRequest.h; sourceTree = "<group>"; };
+		A8677C841B78E494004C3689 /* RouteRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RouteRequest.m; sourceTree = "<group>"; };
+		A8677C851B78E494004C3689 /* RouteResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RouteResponse.h; sourceTree = "<group>"; };
+		A8677C861B78E494004C3689 /* RouteResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RouteResponse.m; sourceTree = "<group>"; };
+		A8677C871B78E494004C3689 /* RoutingConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoutingConnection.h; sourceTree = "<group>"; };
+		A8677C881B78E494004C3689 /* RoutingConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoutingConnection.m; sourceTree = "<group>"; };
+		A8677C891B78E494004C3689 /* RoutingHTTPServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoutingHTTPServer.h; sourceTree = "<group>"; };
+		A8677C8A1B78E494004C3689 /* RoutingHTTPServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoutingHTTPServer.m; sourceTree = "<group>"; };
 		A8A4A3091B70F3070077777C /* AssetBrowserController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssetBrowserController.h; sourceTree = "<group>"; };
 		A8A4A30A1B70F3070077777C /* AssetBrowserController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssetBrowserController.m; sourceTree = "<group>"; };
 		A8A4A30B1B70F3070077777C /* AssetBrowserItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssetBrowserItem.h; sourceTree = "<group>"; };
@@ -190,12 +212,6 @@
 		A8A4A40C1B71E33D0077777C /* DispatchQueueLogFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DispatchQueueLogFormatter.m; sourceTree = "<group>"; };
 		A8A4A40D1B71E33D0077777C /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 		A8A4A41E1B71E6800077777C /* Web */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Web; sourceTree = "<group>"; };
-		A8A4A4201B7201470077777C /* MyHTTPConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyHTTPConnection.h; path = Classes/MyHTTPConnection.h; sourceTree = "<group>"; };
-		A8A4A4211B7201470077777C /* MyHTTPConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyHTTPConnection.m; path = Classes/MyHTTPConnection.m; sourceTree = "<group>"; };
-		A8A4A4231B7201AB0077777C /* HTTPResponseTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HTTPResponseTest.h; path = Classes/HTTPResponseTest.h; sourceTree = "<group>"; };
-		A8A4A4241B7201AB0077777C /* HTTPResponseTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HTTPResponseTest.m; path = Classes/HTTPResponseTest.m; sourceTree = "<group>"; };
-		A8A4A4261B720C780077777C /* MyHTTPConnectionFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyHTTPConnectionFile.h; path = Classes/MyHTTPConnectionFile.h; sourceTree = "<group>"; };
-		A8A4A4271B720C780077777C /* MyHTTPConnectionFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyHTTPConnectionFile.m; path = Classes/MyHTTPConnectionFile.m; sourceTree = "<group>"; };
 		A8A4A42E1B720D010077777C /* MultipartFormDataParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultipartFormDataParser.h; sourceTree = "<group>"; };
 		A8A4A42F1B720D010077777C /* MultipartFormDataParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultipartFormDataParser.m; sourceTree = "<group>"; };
 		A8A4A4301B720D010077777C /* MultipartMessageHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultipartMessageHeader.h; sourceTree = "<group>"; };
@@ -204,6 +220,11 @@
 		A8A4A4331B720D010077777C /* MultipartMessageHeaderField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultipartMessageHeaderField.m; sourceTree = "<group>"; };
 		A8A4A4371B7247F30077777C /* Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Model.h; path = Classes/Model.h; sourceTree = SOURCE_ROOT; };
 		A8A4A4381B7247F30077777C /* Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Model.m; path = Classes/Model.m; sourceTree = SOURCE_ROOT; };
+		A8D220531B7A2CC20094FCB1 /* reveal-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reveal-icon.png"; sourceTree = "<group>"; };
+		A8D220541B7A2CC20094FCB1 /* reveal-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reveal-icon@2x.png"; sourceTree = "<group>"; };
+		A8D220551B7A2CC20094FCB1 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		A8D220561B7A2CC20094FCB1 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		A8D2205A1B7A6AF20094FCB1 /* DropboxSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DropboxSDK.framework; path = "../../../Downloads/DropboxBrowser-master/Example Project/DropboxSDK.framework"; sourceTree = "<group>"; };
 		CCE5BD42196F037300016BAB /* MediaAccessibility.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaAccessibility.framework; path = System/Library/Frameworks/MediaAccessibility.framework; sourceTree = SDKROOT; };
 		CCE5BD44196F038400016BAB /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		EF110FAF19759BB30009410F /* CastInstructionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CastInstructionsViewController.h; sourceTree = "<group>"; };
@@ -242,6 +263,7 @@
 				EFE3184819C7D97B00C053EE /* SystemConfiguration.framework in Frameworks */,
 				CCE5BD45196F038400016BAB /* CoreText.framework in Frameworks */,
 				CCE5BD43196F037300016BAB /* MediaAccessibility.framework in Frameworks */,
+				A8D2205B1B7A6AF20094FCB1 /* DropboxSDK.framework in Frameworks */,
 				12E0CCBD18511D8400447896 /* AVFoundation.framework in Frameworks */,
 				284CBD88182ADC2D007F65F9 /* CoreGraphics.framework in Frameworks */,
 				284CBD8A182ADC2D007F65F9 /* UIKit.framework in Frameworks */,
@@ -256,14 +278,9 @@
 		284CBD79182ADC2D007F65F9 = {
 			isa = PBXGroup;
 			children = (
+				A8D220511B7A2CC20094FCB1 /* SWRevealViewController */,
 				A8A4A4371B7247F30077777C /* Model.h */,
 				A8A4A4381B7247F30077777C /* Model.m */,
-				A8A4A4261B720C780077777C /* MyHTTPConnectionFile.h */,
-				A8A4A4271B720C780077777C /* MyHTTPConnectionFile.m */,
-				A8A4A4231B7201AB0077777C /* HTTPResponseTest.h */,
-				A8A4A4241B7201AB0077777C /* HTTPResponseTest.m */,
-				A8A4A4201B7201470077777C /* MyHTTPConnection.h */,
-				A8A4A4211B7201470077777C /* MyHTTPConnection.m */,
 				A8A4A3FD1B71E33D0077777C /* Logging */,
 				A8A4A3CE1B71E3160077777C /* HTTP */,
 				A8A4A3A71B71DBAA0077777C /* TCP */,
@@ -287,6 +304,7 @@
 		284CBD84182ADC2D007F65F9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A8D2205A1B7A6AF20094FCB1 /* DropboxSDK.framework */,
 				EFE3184719C7D97B00C053EE /* SystemConfiguration.framework */,
 				CCE5BD44196F038400016BAB /* CoreText.framework */,
 				CCE5BD42196F037300016BAB /* MediaAccessibility.framework */,
@@ -365,6 +383,34 @@
 			path = Images;
 			sourceTree = "<group>";
 		};
+		A84345E01B78A88900CEB21C /* CustomeComponents */ = {
+			isa = PBXGroup;
+			children = (
+				A84345E41B78A91600CEB21C /* ImageCell.h */,
+				A84345E51B78A91600CEB21C /* ImageCell.m */,
+			);
+			path = CustomeComponents;
+			sourceTree = "<group>";
+		};
+		A8677C7E1B78E494004C3689 /* RoutingHttp */ = {
+			isa = PBXGroup;
+			children = (
+				A8677C7F1B78E494004C3689 /* HTTPResponseProxy.h */,
+				A8677C801B78E494004C3689 /* HTTPResponseProxy.m */,
+				A8677C811B78E494004C3689 /* Route.h */,
+				A8677C821B78E494004C3689 /* Route.m */,
+				A8677C831B78E494004C3689 /* RouteRequest.h */,
+				A8677C841B78E494004C3689 /* RouteRequest.m */,
+				A8677C851B78E494004C3689 /* RouteResponse.h */,
+				A8677C861B78E494004C3689 /* RouteResponse.m */,
+				A8677C871B78E494004C3689 /* RoutingConnection.h */,
+				A8677C881B78E494004C3689 /* RoutingConnection.m */,
+				A8677C891B78E494004C3689 /* RoutingHTTPServer.h */,
+				A8677C8A1B78E494004C3689 /* RoutingHTTPServer.m */,
+			);
+			path = RoutingHttp;
+			sourceTree = "<group>";
+		};
 		A8A4A3071B70F3070077777C /* CustomLibrary */ = {
 			isa = PBXGroup;
 			children = (
@@ -404,6 +450,7 @@
 		A8A4A3CE1B71E3160077777C /* HTTP */ = {
 			isa = PBXGroup;
 			children = (
+				A8677C7E1B78E494004C3689 /* RoutingHttp */,
 				A8A4A42D1B720D010077777C /* Mime */,
 				A8A4A3CF1B71E3160077777C /* Categories */,
 				A8A4A3D61B71E3160077777C /* HTTPAuthenticationRequest.h */,
@@ -500,6 +547,26 @@
 			path = Mime;
 			sourceTree = "<group>";
 		};
+		A8D220511B7A2CC20094FCB1 /* SWRevealViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A8D220521B7A2CC20094FCB1 /* img */,
+				A8D220551B7A2CC20094FCB1 /* SWRevealViewController.h */,
+				A8D220561B7A2CC20094FCB1 /* SWRevealViewController.m */,
+			);
+			name = SWRevealViewController;
+			path = Classes/SWRevealViewController;
+			sourceTree = "<group>";
+		};
+		A8D220521B7A2CC20094FCB1 /* img */ = {
+			isa = PBXGroup;
+			children = (
+				A8D220531B7A2CC20094FCB1 /* reveal-icon.png */,
+				A8D220541B7A2CC20094FCB1 /* reveal-icon@2x.png */,
+			);
+			path = img;
+			sourceTree = "<group>";
+		};
 		AAF945D30CEBEECB469A7476 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -512,6 +579,7 @@
 		EF60AA251A9D27390036D4FA /* CastComponents */ = {
 			isa = PBXGroup;
 			children = (
+				A84345E01B78A88900CEB21C /* CustomeComponents */,
 				EF110FAF19759BB30009410F /* CastInstructionsViewController.h */,
 				EF110FB019759BB30009410F /* CastInstructionsViewController.m */,
 				124377CE187CC2B500ADF736 /* DeviceTableViewController.h */,
@@ -606,6 +674,7 @@
 				284CBDA4182ADC2D007F65F9 /* Images.xcassets in Resources */,
 				EF23DBA919C0EF7F00DA5ABB /* closed_caption_white.png in Resources */,
 				EFB7D70A1ADC52AE00628229 /* CastFrameworkAssets.xcassets in Resources */,
+				A8D220581B7A2CC20094FCB1 /* reveal-icon@2x.png in Resources */,
 				EF775C5E1A49FE9E00995266 /* thumb.png in Resources */,
 				129886E31872348A00B013D2 /* video_thumb_mini.png in Resources */,
 				284CBD90182ADC2D007F65F9 /* InfoPlist.strings in Resources */,
@@ -613,6 +682,7 @@
 				12E0CD1918550A0700447896 /* list_outline_white.png in Resources */,
 				12E0CD1A18550A0700447896 /* list_outline_white@2x.png in Resources */,
 				284CC02B182B0F9B007F65F9 /* Default-568h@2x.png in Resources */,
+				A8D220571B7A2CC20094FCB1 /* reveal-icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -657,9 +727,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				A8A4A3151B70F3070077777C /* AssetBrowserSource.m in Sources */,
+				A8677C901B78E494004C3689 /* RoutingHTTPServer.m in Sources */,
 				284CBD96182ADC2D007F65F9 /* AppDelegate.m in Sources */,
+				A84345E61B78A91600CEB21C /* ImageCell.m in Sources */,
 				284CC032182B1891007F65F9 /* ChromecastDeviceController.m in Sources */,
 				A8A4A4391B7247F30077777C /* Model.m in Sources */,
+				A8D220591B7A2CC20094FCB1 /* SWRevealViewController.m in Sources */,
+				A8677C8D1B78E494004C3689 /* RouteRequest.m in Sources */,
 				A8A4A3FA1B71E3160077777C /* HTTPFileResponse.m in Sources */,
 				A8A4A3F11B71E3160077777C /* DDRange.m in Sources */,
 				A8A4A3171B70F3070077777C /* CustomViewController.m in Sources */,
@@ -674,12 +748,12 @@
 				A8A4A3FC1B71E3160077777C /* WebSocket.m in Sources */,
 				284CC035182C3396007F65F9 /* CastViewController.m in Sources */,
 				A8A4A3F61B71E3160077777C /* HTTPAsyncFileResponse.m in Sources */,
-				A8A4A4281B720C780077777C /* MyHTTPConnectionFile.m in Sources */,
+				A8677C8B1B78E494004C3689 /* HTTPResponseProxy.m in Sources */,
+				A8677C8C1B78E494004C3689 /* Route.m in Sources */,
 				EFD7C20319FE71AF00082842 /* LocalPlayerView.m in Sources */,
 				A8A4A3F81B71E3160077777C /* HTTPDynamicFileResponse.m in Sources */,
 				284CBD92182ADC2D007F65F9 /* main.m in Sources */,
 				124377D0187CC2B500ADF736 /* DeviceTableViewController.m in Sources */,
-				A8A4A4221B7201470077777C /* MyHTTPConnection.m in Sources */,
 				A8A4A3F01B71E3160077777C /* DDNumber.m in Sources */,
 				EFD8A0F01AAE32AB005808B2 /* GCKMediaInformation+LocalMedia.m in Sources */,
 				491627AF184FBF9C00351397 /* SimpleImageFetcher.m in Sources */,
@@ -692,9 +766,11 @@
 				284CBDA2182ADC2D007F65F9 /* LocalPlayerViewController.m in Sources */,
 				A8A4A3FB1B71E3160077777C /* HTTPRedirectResponse.m in Sources */,
 				A8A4A4341B720D010077777C /* MultipartFormDataParser.m in Sources */,
+				A8677C8E1B78E494004C3689 /* RouteResponse.m in Sources */,
 				A8A4A3F91B71E3160077777C /* HTTPErrorResponse.m in Sources */,
 				A8A4A3F41B71E3160077777C /* HTTPMessage.m in Sources */,
 				A8A4A4121B71E33D0077777C /* DDTTYLogger.m in Sources */,
+				A8677C8F1B78E494004C3689 /* RoutingConnection.m in Sources */,
 				A8A4A3F21B71E3160077777C /* HTTPAuthenticationRequest.m in Sources */,
 				A8A4A3F51B71E3160077777C /* HTTPServer.m in Sources */,
 				EFD8A0E91AABD052005808B2 /* MediaTrack.m in Sources */,
@@ -702,7 +778,6 @@
 				A8A4A4131B71E33D0077777C /* ContextFilterLogFormatter.m in Sources */,
 				A8A4A3EF1B71E3160077777C /* DDData.m in Sources */,
 				A8A4A4111B71E33D0077777C /* DDLog.m in Sources */,
-				A8A4A4251B7201AB0077777C /* HTTPResponseTest.m in Sources */,
 				A8A4A4141B71E33D0077777C /* DispatchQueueLogFormatter.m in Sources */,
 				496D4701182DBE9C00343F72 /* MediaListModel.m in Sources */,
 				A8A4A4361B720D010077777C /* MultipartMessageHeaderField.m in Sources */,
@@ -808,6 +883,8 @@
 					"$(inherited)",
 					..,
 					"$(PROJECT_DIR)",
+					"/Users/pavelvpv/Downloads/DropboxBrowser-master/Example",
+					Project,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Classes/CastVideos-Prefix.pch";
@@ -832,6 +909,8 @@
 					"$(inherited)",
 					..,
 					"$(PROJECT_DIR)",
+					"/Users/pavelvpv/Downloads/DropboxBrowser-master/Example",
+					Project,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Classes/CastVideos-Prefix.pch";

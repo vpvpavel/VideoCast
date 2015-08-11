@@ -106,7 +106,7 @@ static const int kCastIconButtonAnimationDuration = 2;
       [self setHidden:NO];
       [self.imageView stopAnimating];
       [self setImage:self.castOn forState:UIControlStateNormal];
-      [self setTintColor:[UIColor yellowColor]];
+      [self setTintColor:[UIColor greenColor]];
       break;
   }
 }

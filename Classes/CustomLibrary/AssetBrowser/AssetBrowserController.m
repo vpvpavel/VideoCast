@@ -70,6 +70,7 @@
 #include <arpa/inet.h>
 
 #include "Model.h"
+#include "ImageCell.h"
 
 @import AssetsLibrary;
 /* Generating thumbnails is expensive and requires a lot of resources.
@@ -79,6 +80,7 @@
 
 @interface AssetBrowserController () <AssetBrowserSourceDelegate, UIScrollViewDelegate, UITableViewDelegate, UITableViewDataSource, ChromecastDeviceControllerDelegate>
 
+@property (nonatomic) IBOutlet UIBarButtonItem* revealButtonItem;
 @property (nonatomic, copy) NSArray *assetSources;
 
 - (void)configureCell:(UITableViewCell*)cell forIndexPath:(NSIndexPath *)indexPath;
@@ -154,8 +156,8 @@ enum {
 //
 //}
 
-- (NSString *)getIPAddress {
-    
+- (NSString *)getIPAddress
+{
     NSString *address = @"error";
     struct ifaddrs *interfaces = NULL;
     struct ifaddrs *temp_addr = NULL;
@@ -171,18 +173,14 @@ enum {
                 if([[NSString stringWithUTF8String:temp_addr->ifa_name] isEqualToString:@"en0"]) {
                     // Get NSString from C String
                     address = [NSString stringWithUTF8String:inet_ntoa(((struct sockaddr_in *)temp_addr->ifa_addr)->sin_addr)];
-                    
                 }
-                
             }
-            
             temp_addr = temp_addr->ifa_next;
         }
     }
     // Free memory
     freeifaddrs(interfaces);
     return address;
-    
 }
 
 #pragma mark -
@@ -206,7 +204,6 @@ enum {
 		
 		activeAssetSources = [[NSMutableArray alloc] initWithCapacity:0];
 		isModal = modalPresentation;
-		
 		
 		// Okay now generate the list of Assets to be displayed.
 		// This should be relatively quick since we are not creating assets or thumbnails.
@@ -235,6 +232,19 @@ enum {
 	}
     return self;
 }
+#pragma mark -
+#pragma mark SWRevealViewController
+
+- (void)customSetup
+{
+    SWRevealViewController *revealViewController = self.revealViewController;
+    if ( revealViewController )
+    {
+        [self.revealButtonItem setTarget: self.revealViewController];
+        [self.revealButtonItem setAction: @selector( revealToggle: )];
+        [self.view addGestureRecognizer: self.revealViewController.panGestureRecognizer];
+    }
+}
 
 #pragma mark -
 #pragma mark View lifecycle
@@ -242,11 +252,11 @@ enum {
 - (void)viewDidLoad
 {
 	[super viewDidLoad];
-	
-    [self initWithSourceType:AssetBrowserSourceTypeAll modalPresentation:NO];
+    [self customSetup];
+
+    [self initWithSourceType:AssetBrowserSourceTypeCameraRoll modalPresentation:NO];
   
-    
-	self.tableView.rowHeight = 65.0; // 1 point is for the divider, we want our thumbnails to have an even height.
+	self.tableView.rowHeight = 215.0; // 1 point is for the divider, we want our thumbnails to have an even height.
 	
 	if (!singleSourceTypeMode)
 		self.tableView.sectionHeaderHeight = 22.0;
@@ -265,12 +275,9 @@ enum {
 {	
 	[super viewWillAppear:animated];
     
-//      [self startServer];
-    
     [ChromecastDeviceController sharedInstance].delegate = self;
     [[ChromecastDeviceController sharedInstance] decorateViewController:self];
     
-	
 	if (isModal && (self.modalPresentationStyle == UIModalPresentationFullScreen)) {
 		lastStatusBarStyle = [UIApplication sharedApplication].statusBarStyle;
 		if ( lastStatusBarStyle != UIStatusBarStyleLightContent ) {
@@ -411,11 +418,11 @@ enum {
 {	
 	if ( cell == nil)
 		return;
-	
+    ImageCell *newCell = (ImageCell *)cell;
 	AssetBrowserSource *source = [activeAssetSources objectAtIndex:indexPath.section];
 	
 	AssetBrowserItem *item = [[source items] objectAtIndex:indexPath.row];
-	cell.textLabel.text = item.title;
+//	cell.textLabel.text = item.title;
 
 	UIImage *thumb = item.thumbnailImage;
 	
@@ -426,22 +433,25 @@ enum {
 	if (!thumb) {
 		thumb = [item placeHolderImage];
 	}
-	cell.imageView.image = thumb;
+	newCell.previewImage.image = thumb;
 }
+
+
 
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath 
-{    
-	static NSString *CellIdentifier = @"Cell";
+{
+    static NSString *const CustomCell = @"GoodsCell";
+    
+    ImageCell *cell = [tableView dequeueReusableCellWithIdentifier:CustomCell];
 
-	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-	if (cell == nil) {
-
-		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-		cell.textLabel.font = [UIFont boldSystemFontOfSize:14.0];
-		cell.accessoryType = isModal ? UITableViewCellAccessoryNone : UITableViewCellAccessoryDisclosureIndicator;
-	}
-	
+//	if (cell == nil) {
+//
+//		cell = [[ImageCell alloc] init];
+////		cell.textLabel.font = [UIFont boldSystemFontOfSize:14.0];
+////		cell.accessoryType = isModal ? UITableViewCellAccessoryNone : UITableViewCellAccessoryDisclosureIndicator;
+//	}
+    
 	[self configureCell:cell forIndexPath:indexPath];
 	
 	return cell;
@@ -454,20 +464,17 @@ enum {
 {		
 	AssetBrowserItem *selectedItem = [[(AssetBrowserSource*)[activeAssetSources objectAtIndex:indexPath.section] items] objectAtIndex:indexPath.row];
 	
-	if ([self.delegate respondsToSelector:@selector(assetBrowser:didChooseItem:)]) {
-		AssetBrowserItem *selectedItemCopy = [selectedItem copy];
-		[self.delegate assetBrowser:self didChooseItem:selectedItemCopy];
-	}
+//	if ([self.delegate respondsToSelector:@selector(assetBrowser:didChooseItem:)]) {
+//		AssetBrowserItem *selectedItemCopy = [selectedItem copy];
+//		[self.delegate assetBrowser:self didChooseItem:selectedItemCopy];
+//	}
     
     AVURLAsset *asset = (AVURLAsset*)selectedItem.asset;
 //    asset.URL
-    
-//    DDLogInfo(@"MyIp %@:%hu", [self getIPAddress], [forPortHttpServer listeningPort]);
-//    
-//     DDLogInfo(@"url %@", asset.URL);
-    AppDelegate* appDel = (AppDelegate*)[[UIApplication sharedApplication]delegate];
-    
-    NSString *url = [NSString stringWithFormat:@"http://%@:%ld/1.mp4", [self getIPAddress], (long)appDel.port];
+//    NSLog(@"meta k%@", asset.commonMetadata);
+
+
+ 
     
     ALAssetsLibrary *assetLibrary=[[ALAssetsLibrary alloc] init];
     [assetLibrary assetForURL:asset.URL resultBlock:^(ALAsset *asset)
@@ -478,9 +485,11 @@ enum {
          
          
          Model *model = [Model sharedModel];
-         model.dataFile = [NSData dataWithBytesNoCopy:buffer length:buffered freeWhenDone:YES];
+         NSData *fileData = [NSData dataWithBytesNoCopy:buffer length:buffered freeWhenDone:YES];
+         model.dataFile = fileData;
+         model.thumbnailImage = UIImagePNGRepresentation(selectedItem.thumbnailImage);
         
-         [self performSegueWithIdentifier:@"playMedia" sender:url];
+         [self performSegueWithIdentifier:@"playMedia" sender:selectedItem];
      }
                  failureBlock:^(NSError *err) {
                      NSLog(@"Error: %@",[err localizedDescription]);
@@ -494,11 +503,25 @@ enum {
     
     if ([[segue identifier] isEqualToString:@"playMedia"]) {
         
+        AssetBrowserItem *selectedItem = (AssetBrowserItem *)sender;
+        
+        AppDelegate* appDel = (AppDelegate*)[[UIApplication sharedApplication]delegate];
+        
+        NSString *title = [selectedItem.title stringByReplacingOccurrencesOfString:@" " withString:@""];
+
+        
+        NSString *videoUrl = [NSString stringWithFormat:@"http://%@:%ld/video/%@.mp4", [self getIPAddress], (long)appDel.port, title];
+        NSString *thumnailUrl = [NSString stringWithFormat:@"http://%@:%ld/thumbnail/%@.png", [self getIPAddress], (long)appDel.port, title];
+
         
         Media *media = [[Media alloc] init];
-        media.URL = [NSURL URLWithString:sender];
-        media.thumbnailURL = [NSURL URLWithString:sender];;
-        media.posterURL = [NSURL URLWithString:sender];;
+        media.title = selectedItem.title;
+        media.descrip = @"";
+        media.mimeType = @"video/mp4";
+        media.subtitle = @"";
+        media.URL = [NSURL URLWithString:videoUrl];
+        media.thumbnailURL = [NSURL URLWithString:thumnailUrl];
+        media.posterURL = [NSURL URLWithString:thumnailUrl];
         // Pass the currently selected media to the next controller if it needs it.
         [[segue destinationViewController] setMediaToPlay:media];
     }

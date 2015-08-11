@@ -200,7 +200,7 @@
                       NSString *dateVideo = [asset valueForProperty:ALAssetPropertyDate];
                       NSString *locationVideo = [asset valueForProperty:ALAssetPropertyLocation];
 					  NSURL *URL = [[asset valueForProperty:ALAssetPropertyURLs] valueForKey:uti];
-					  NSString *title = [NSString stringWithFormat:@"%@ %lu", NSLocalizedString(@"myVideo", nil), [assetItems count]+1];
+					  NSString *title = [NSString stringWithFormat:@"%u", [assetItems count]+1];
 					  AssetBrowserItem *item = [[AssetBrowserItem alloc] initWithURL:URL title:title];
 					  
 					  [assetItems addObject:item];

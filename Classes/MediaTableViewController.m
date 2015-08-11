@@ -104,18 +104,18 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-//  if ([[segue identifier] isEqualToString:@"playMedia"]) {
-//    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-//    Media *media = [self.mediaList mediaAtIndex:(int)indexPath.row];
-//    // Pass the currently selected media to the next controller if it needs it.
-//    [[segue destinationViewController] setMediaToPlay:media];
-//  }
-    if ([[segue identifier] isEqualToString:@"playMedia"]) {
-        Media *media = [[Media alloc] init];
-        media.URL = [NSURL URLWithString:@"https://cs6-11v4.vk-cdn.net/p3/f77385b8af94.480.mp4?extra=i6A66d78_xQR4wESZsAhHf6a_RgFJfy8KTsoZC_BR7m7_-c9lkIYmyDRiTh10hKHEjbxmxqXLPtAzOf9Pt95mr9wVZqhSTwN"];
-        // Pass the currently selected media to the next controller if it needs it.
-        [[segue destinationViewController] setMediaToPlay:media];
-    }
+  if ([[segue identifier] isEqualToString:@"playMedia"]) {
+    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+    Media *media = [self.mediaList mediaAtIndex:(int)indexPath.row];
+    // Pass the currently selected media to the next controller if it needs it.
+    [[segue destinationViewController] setMediaToPlay:media];
+  }
+//    if ([[segue identifier] isEqualToString:@"playMedia"]) {
+//        Media *media = [[Media alloc] init];
+//        media.URL = [NSURL URLWithString:@"https://cs6-11v4.vk-cdn.net/p3/f77385b8af94.480.mp4?extra=i6A66d78_xQR4wESZsAhHf6a_RgFJfy8KTsoZC_BR7m7_-c9lkIYmyDRiTh10hKHEjbxmxqXLPtAzOf9Pt95mr9wVZqhSTwN"];
+//        // Pass the currently selected media to the next controller if it needs it.
+//        [[segue destinationViewController] setMediaToPlay:media];
+//    }
 }
 
 @end

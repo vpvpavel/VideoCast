@@ -18,20 +18,25 @@
 #import "AssetBrowserController.h"
 #import "ChromecastDeviceController.h"
 
-#import "MyHTTPConnection.h"
+#import <DropboxSDK/DropboxSDK.h>
 
-#import "HTTPConnection.h"
 
-@class iPhoneHTTPServerViewController;
-@class HTTPServer;
+//#import "MyHTTPConnection.h"
+//
+//#import "HTTPConnection.h"
+
+@class RoutingHTTPServer;
 
 @interface AppDelegate : UIResponder<UIApplicationDelegate, AssetBrowserControllerDelegate, ChromecastDeviceControllerDelegate>
 {
-   HTTPServer *httpServer;
+//   HTTPServer *httpServer;
     
     UIWindow *window;
 //    iPhoneHTTPServerViewController *viewController;
 }
+
+@property (strong) RoutingHTTPServer *httpServer;
+
 
 @property (nonatomic, assign) NSInteger port;
 

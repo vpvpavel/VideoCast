@@ -18,17 +18,20 @@
 #import <AVFoundation/AVFoundation.h>
 
 
-#import "HTTPServer.h"
+//#import "HTTPServer.h"
 #import "DDLog.h"
 #import "DDTTYLogger.h"
-#import "MyHTTPConnection.h"
-#import "HTTPDataResponse.h"
+#import "RoutingHTTPServer.h"
+
+#import "Model.h"
+
 
 // Log levels: off, error, warn, info, verbose
 static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 
 @implementation AppDelegate
 
+@synthesize httpServer;
 - (void)startServer
 {
     // Start the server (and check for problems)
@@ -53,28 +56,28 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
     // To keep things simple and fast, we're just going to log to the Xcode console.
     [DDLog addLogger:[DDTTYLogger sharedInstance]];
     
-    // Create server using our custom MyHTTPServer class
-    httpServer = [[HTTPServer alloc] init];
-    
-    [httpServer setConnectionClass:[MyHTTPConnection class]];
-    
-    // Tell the server to broadcast its presence via Bonjour.
-    // This allows browsers such as Safari to automatically discover our service.
-    [httpServer setType:@"_http._tcp."];
-    
-    // Normally there's no need to run our server on any specific port.
-    // Technologies like Bonjour allow clients to dynamically discover the server's port at runtime.
-    // However, for easy testing you may want force a certain port so you can just hit the refresh button.
-    // [httpServer setPort:12345];
-    
-    // Serve files from our embedded Web folder
-    NSString *webPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"Web"];
-    DDLogInfo(@"Setting document root: %@", webPath);
-    
-    [httpServer setDocumentRoot:webPath];
-    
+    httpServer = [[RoutingHTTPServer alloc] init];
+    [httpServer setPort:55820];
+    [httpServer setDefaultHeader:@"Server" value:@"YourAwesomeApp/1.0"];
     
     [self startServer];
+     Model *model = [Model sharedModel];
+    [httpServer handleMethod:@"GET" withPath:@"/video/*.*" block:^(RouteRequest *request, RouteResponse *response) {
+        [response setHeader:@"Content-Type" value:@"video/mp4"];
+        [response setHeader:@"Cache-Control" value:@"public, max-age=3600"];
+        [response setHeader:@"Access-Control-Expose-Headers" value:@"Content-Type, Range, Accept-Encoding"];
+        [response setHeader:@"Access-Control-Allow-Origin" value:@"*"];
+        [response setHeader:@"alternate-protocol" value:@"443:quic,p=1"];
+        [response respondWithData:model.dataFile];
+    }];
+    
+    [httpServer handleMethod:@"GET" withPath:@"/thumbnail/*.*" block:^(RouteRequest *request, RouteResponse *response) {
+        [response setHeader:@"Content-Type" value:@"image/png"];
+        [response respondWithData:model.thumbnailImage];
+        
+    }];
+    
+
     
     
 //  [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
@@ -97,5 +100,22 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 
   return YES;
 }
+
+
+
+//- (void)applicationWillEnterForeground:(UIApplication *)application
+//{
+//    [self startServer];
+//}
+
+//- (void)applicationDidEnterBackground:(UIApplication *)application
+//{
+//    // There is no public(allowed in AppStore) method for iOS to run continiously in the background for our purposes (serving HTTP).
+//    // So, we stop the server when the app is paused (if a users exits from the app or locks a device) and
+//    // restart the server when the app is resumed (based on this document: http://developer.apple.com/library/ios/#technotes/tn2277/_index.html )
+//    
+//    [httpServer stop];
+//}
+
 
 @end
