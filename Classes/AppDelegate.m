@@ -51,6 +51,12 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 
 - (BOOL)application:(UIApplication *)application
     didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    // dropbox sdk setup
+    DBSession *dbSession = [[DBSession alloc] initWithAppKey:@"zgpsrab15elwbgg" appSecret:@"jokbqcic4assc6u" root:kDBRootDropbox];
+    [DBSession setSharedSession:dbSession];
+    
+    
 
     // Configure our logging framework.
     // To keep things simple and fast, we're just going to log to the Xcode console.
@@ -101,6 +107,18 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
   return YES;
 }
 
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    if ([[DBSession sharedSession] handleOpenURL:url]) {
+        if ([[DBSession sharedSession] isLinked]) {
+            NSLog(@"App linked successfully!");
+            // At this point you can start making API calls
+        }
+        return YES;
+    }
+    // Add whatever other url handling code your app requires here
+    return NO;
+}
 
 
 //- (void)applicationWillEnterForeground:(UIApplication *)application

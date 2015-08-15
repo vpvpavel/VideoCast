@@ -75,7 +75,12 @@
 		A8D220571B7A2CC20094FCB1 /* reveal-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A8D220531B7A2CC20094FCB1 /* reveal-icon.png */; };
 		A8D220581B7A2CC20094FCB1 /* reveal-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A8D220541B7A2CC20094FCB1 /* reveal-icon@2x.png */; };
 		A8D220591B7A2CC20094FCB1 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8D220561B7A2CC20094FCB1 /* SWRevealViewController.m */; };
-		A8D2205B1B7A6AF20094FCB1 /* DropboxSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8D2205A1B7A6AF20094FCB1 /* DropboxSDK.framework */; };
+		A8D2205D1B7A6CFC0094FCB1 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8D2205C1B7A6CFC0094FCB1 /* QuartzCore.framework */; };
+		A8D220611B7A6E3A0094FCB1 /* LinkAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8D220601B7A6E3A0094FCB1 /* LinkAccountViewController.m */; };
+		A8D220671B7A6FF60094FCB1 /* MenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8D220661B7A6FF60094FCB1 /* MenuTableViewController.m */; };
+		A8D2206B1B7A76FB0094FCB1 /* PhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8D220691B7A76FB0094FCB1 /* PhotoViewController.m */; };
+		A8D2206C1B7A76FB0094FCB1 /* PhotoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8D2206A1B7A76FB0094FCB1 /* PhotoViewController.xib */; };
+		A8D2206E1B7A82AE0094FCB1 /* DropboxSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8D2206D1B7A82AE0094FCB1 /* DropboxSDK.framework */; };
 		CCE5BD43196F037300016BAB /* MediaAccessibility.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCE5BD42196F037300016BAB /* MediaAccessibility.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		CCE5BD45196F038400016BAB /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCE5BD44196F038400016BAB /* CoreText.framework */; };
 		EB0EAE502A661842D7221B79 /* libPods-CastVideos.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FC9B5525AE0F00A7BF2F43E7 /* libPods-CastVideos.a */; };
@@ -224,7 +229,15 @@
 		A8D220541B7A2CC20094FCB1 /* reveal-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reveal-icon@2x.png"; sourceTree = "<group>"; };
 		A8D220551B7A2CC20094FCB1 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		A8D220561B7A2CC20094FCB1 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
-		A8D2205A1B7A6AF20094FCB1 /* DropboxSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DropboxSDK.framework; path = "../../../Downloads/DropboxBrowser-master/Example Project/DropboxSDK.framework"; sourceTree = "<group>"; };
+		A8D2205C1B7A6CFC0094FCB1 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		A8D2205F1B7A6E3A0094FCB1 /* LinkAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinkAccountViewController.h; sourceTree = "<group>"; };
+		A8D220601B7A6E3A0094FCB1 /* LinkAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LinkAccountViewController.m; sourceTree = "<group>"; };
+		A8D220651B7A6FF60094FCB1 /* MenuTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuTableViewController.h; path = Classes/MenuTableViewController.h; sourceTree = "<group>"; };
+		A8D220661B7A6FF60094FCB1 /* MenuTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuTableViewController.m; path = Classes/MenuTableViewController.m; sourceTree = "<group>"; };
+		A8D220681B7A76FB0094FCB1 /* PhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoViewController.h; sourceTree = "<group>"; };
+		A8D220691B7A76FB0094FCB1 /* PhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoViewController.m; sourceTree = "<group>"; };
+		A8D2206A1B7A76FB0094FCB1 /* PhotoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoViewController.xib; sourceTree = "<group>"; };
+		A8D2206D1B7A82AE0094FCB1 /* DropboxSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DropboxSDK.framework; sourceTree = "<group>"; };
 		CCE5BD42196F037300016BAB /* MediaAccessibility.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaAccessibility.framework; path = System/Library/Frameworks/MediaAccessibility.framework; sourceTree = SDKROOT; };
 		CCE5BD44196F038400016BAB /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		EF110FAF19759BB30009410F /* CastInstructionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CastInstructionsViewController.h; sourceTree = "<group>"; };
@@ -260,10 +273,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8D2205D1B7A6CFC0094FCB1 /* QuartzCore.framework in Frameworks */,
 				EFE3184819C7D97B00C053EE /* SystemConfiguration.framework in Frameworks */,
+				A8D2206E1B7A82AE0094FCB1 /* DropboxSDK.framework in Frameworks */,
 				CCE5BD45196F038400016BAB /* CoreText.framework in Frameworks */,
 				CCE5BD43196F037300016BAB /* MediaAccessibility.framework in Frameworks */,
-				A8D2205B1B7A6AF20094FCB1 /* DropboxSDK.framework in Frameworks */,
 				12E0CCBD18511D8400447896 /* AVFoundation.framework in Frameworks */,
 				284CBD88182ADC2D007F65F9 /* CoreGraphics.framework in Frameworks */,
 				284CBD8A182ADC2D007F65F9 /* UIKit.framework in Frameworks */,
@@ -278,6 +292,9 @@
 		284CBD79182ADC2D007F65F9 = {
 			isa = PBXGroup;
 			children = (
+				A8D220651B7A6FF60094FCB1 /* MenuTableViewController.h */,
+				A8D220661B7A6FF60094FCB1 /* MenuTableViewController.m */,
+				A8D2205E1B7A6E3A0094FCB1 /* Dropbox */,
 				A8D220511B7A2CC20094FCB1 /* SWRevealViewController */,
 				A8A4A4371B7247F30077777C /* Model.h */,
 				A8A4A4381B7247F30077777C /* Model.m */,
@@ -304,7 +321,8 @@
 		284CBD84182ADC2D007F65F9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A8D2205A1B7A6AF20094FCB1 /* DropboxSDK.framework */,
+				A8D2206D1B7A82AE0094FCB1 /* DropboxSDK.framework */,
+				A8D2205C1B7A6CFC0094FCB1 /* QuartzCore.framework */,
 				EFE3184719C7D97B00C053EE /* SystemConfiguration.framework */,
 				CCE5BD44196F038400016BAB /* CoreText.framework */,
 				CCE5BD42196F037300016BAB /* MediaAccessibility.framework */,
@@ -567,6 +585,19 @@
 			path = img;
 			sourceTree = "<group>";
 		};
+		A8D2205E1B7A6E3A0094FCB1 /* Dropbox */ = {
+			isa = PBXGroup;
+			children = (
+				A8D220681B7A76FB0094FCB1 /* PhotoViewController.h */,
+				A8D220691B7A76FB0094FCB1 /* PhotoViewController.m */,
+				A8D2206A1B7A76FB0094FCB1 /* PhotoViewController.xib */,
+				A8D2205F1B7A6E3A0094FCB1 /* LinkAccountViewController.h */,
+				A8D220601B7A6E3A0094FCB1 /* LinkAccountViewController.m */,
+			);
+			name = Dropbox;
+			path = Classes/Dropbox;
+			sourceTree = "<group>";
+		};
 		AAF945D30CEBEECB469A7476 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -681,6 +712,7 @@
 				EF23DBAA19C0EF7F00DA5ABB /* closed_caption_white@2x.png in Resources */,
 				12E0CD1918550A0700447896 /* list_outline_white.png in Resources */,
 				12E0CD1A18550A0700447896 /* list_outline_white@2x.png in Resources */,
+				A8D2206C1B7A76FB0094FCB1 /* PhotoViewController.xib in Resources */,
 				284CC02B182B0F9B007F65F9 /* Default-568h@2x.png in Resources */,
 				A8D220571B7A2CC20094FCB1 /* reveal-icon.png in Resources */,
 			);
@@ -727,6 +759,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A8A4A3151B70F3070077777C /* AssetBrowserSource.m in Sources */,
+				A8D220611B7A6E3A0094FCB1 /* LinkAccountViewController.m in Sources */,
 				A8677C901B78E494004C3689 /* RoutingHTTPServer.m in Sources */,
 				284CBD96182ADC2D007F65F9 /* AppDelegate.m in Sources */,
 				A84345E61B78A91600CEB21C /* ImageCell.m in Sources */,
@@ -757,8 +790,10 @@
 				A8A4A3F01B71E3160077777C /* DDNumber.m in Sources */,
 				EFD8A0F01AAE32AB005808B2 /* GCKMediaInformation+LocalMedia.m in Sources */,
 				491627AF184FBF9C00351397 /* SimpleImageFetcher.m in Sources */,
+				A8D220671B7A6FF60094FCB1 /* MenuTableViewController.m in Sources */,
 				A8A4A40F1B71E33D0077777C /* DDASLLogger.m in Sources */,
 				A8A4A4351B720D010077777C /* MultipartMessageHeader.m in Sources */,
+				A8D2206B1B7A76FB0094FCB1 /* PhotoViewController.m in Sources */,
 				EFD8A0F31AAE8EE3005808B2 /* CastMiniController.m in Sources */,
 				EF23DBAD19C0FF2F00DA5ABB /* TracksTableViewController.m in Sources */,
 				496D46FE182DBE9100343F72 /* Media.m in Sources */,

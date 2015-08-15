@@ -197,8 +197,8 @@
 				  if (asset) {
 					  ALAssetRepresentation *defaultRepresentation = [asset defaultRepresentation];
 					  NSString *uti = [defaultRepresentation UTI];
-                      NSString *dateVideo = [asset valueForProperty:ALAssetPropertyDate];
-                      NSString *locationVideo = [asset valueForProperty:ALAssetPropertyLocation];
+//                      NSString *dateVideo = [asset valueForProperty:ALAssetPropertyDate];
+//                      NSString *locationVideo = [asset valueForProperty:ALAssetPropertyLocation];
 					  NSURL *URL = [[asset valueForProperty:ALAssetPropertyURLs] valueForKey:uti];
 					  NSString *title = [NSString stringWithFormat:@"%u", [assetItems count]+1];
 					  AssetBrowserItem *item = [[AssetBrowserItem alloc] initWithURL:URL title:title];
